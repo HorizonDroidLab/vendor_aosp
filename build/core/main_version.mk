@@ -10,11 +10,7 @@ ADDITIONAL_SYSTEM_PROPERTIES += \
     ro.custom.device=$(CUSTOM_BUILD) \
     ro.custom.fingerprint=$(ROM_FINGERPRINT) \
     ro.custom.version=$(CUSTOM_VERSION) \
-    ro.modversion=$(CUSTOM_VERSION)
+    ro.modversion=$(CUSTOM_VERSION) \
+    org.horizon.build_type=$(CUSTOM_BUILD_TYPE) \
+    ro.horizon.maintainer=$(HORIZON_MAINTAINER)
 
-# Updater
-ifeq ($(IS_OFFICIAL),true)
-    ADDITIONAL_SYSTEM_PROPERTIES  += \
-        net.pixelos.build_type=ci \
-        net.pixelos.version=$(CUSTOM_VERSION_PROP)
-endif
