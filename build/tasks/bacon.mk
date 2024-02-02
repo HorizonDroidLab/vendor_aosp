@@ -1,26 +1,26 @@
-# Copyright (C) 2017 Unlegacy-Android
-# Copyright (C) 2017,2020 The LineageOS Project
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# Copyright (C) 2024 HorizonDroid
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# SPDX-License-Identifier: Apache-2.0
 #
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
 
-# -----------------------------------------------------------------
-# PixelOS OTA update package
-
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(CUSTOM_VERSION).zip
-MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
+HORIZON_ZIP_NAME := $(HORIZON_VERSION).zip
+HORIZON_TARGET_PACKAGE := $(PRODUCT_OUT)/$(HORIZON_ZIP_NAME)
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
-	$(hide) $(MD5) $(CUSTOM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CUSTOM_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(CUSTOM_TARGET_PACKAGE)" >&2
+	@echo "HorizonDroid OTA package"
+	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(HORIZON_TARGET_PACKAGE)
+	@echo ""
+	@echo "Package Completed:"
+	@echo ""
+	@echo "█░█ █▀█ █▀█ █ ▀█ █▀█ █▄░█"
+	@echo "█▀█ █▄█ █▀▄ █ █▄ █▄█ █░▀█"
+	@echo "═══════════════════════════════════════════════════════════════════"
+	@echo "Zip: $(HORIZON_TARGET_PACKAGE)"
+	@echo "Size: `du -h "$(HORIZON_TARGET_PACKAGE)" | cut -f1`"
+	@echo "SHA256: `sha256sum $(HORIZON_TARGET_PACKAGE) | cut -f 1 -d " "`"
+	@echo "MD5: `md5sum $(HORIZON_TARGET_PACKAGE) | cut -f 1 -d " "`"
+	@echo "═══════════════════════════════════════════════════════════════════"
+	@echo "" >&2
+
