@@ -159,6 +159,10 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/getcap \
     system/bin/setcap
 
+# Extra packages
+PRODUCT_PACKAGES += \
+    GameSpace 
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.ntfs \
