@@ -155,6 +155,13 @@ PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/getcap \
     system/bin/setcap
 
+# ViMusic
+TARGET_BUILD_VIMUSIC ?= false
+ifeq ($(TARGET_BUILD_VIMUSIC),true)
+PRODUCT_PACKAGES += \
+    ViMusic
+endif
+
 # Extra packages
 PRODUCT_PACKAGES += \
     GameSpace 
