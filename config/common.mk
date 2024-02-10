@@ -162,6 +162,13 @@ PRODUCT_PACKAGES += \
     ViMusic
 endif
 
+# InnerTune
+TARGET_BUILD_INNERTUNE ?= false
+ifeq ($(TARGET_BUILD_INNERTUNE),true)
+PRODUCT_PACKAGES += \
+    InnerTune
+endif
+
 # Extra packages
 PRODUCT_PACKAGES += \
     GameSpace 
