@@ -1,6 +1,9 @@
 # Allow vendor/extra to override any property by setting it first
 $(call inherit-product-if-exists, vendor/extra/product.mk)
 
+# Vendor Addons
+$(call inherit-product-if-exists, vendor/addons/config.mk)
+
 # Google Apps
 $(call inherit-product, vendor/gms/products/gms.mk)
 
