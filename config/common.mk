@@ -127,7 +127,7 @@ SYSTEMUI_OPTIMIZE_JAVA ?= true
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Bootanimation
-include vendor/aosp/config/bootanimation.mk
+include vendor/addons/prebuilt/bootanimation/bootanimation.mk
 
 # BtHelper
 PRODUCT_PACKAGES += \
