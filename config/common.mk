@@ -55,9 +55,6 @@ endif
 # Certification
 $(call inherit-product-if-exists, vendor/certification/config.mk)
 
-# Signing
-include vendor/aosp/config/signed.mk
-
 # Call Recording
 TARGET_CALL_RECORDING_SUPPORTED ?= true
 ifneq ($(TARGET_CALL_RECORDING_SUPPORTED),false)
